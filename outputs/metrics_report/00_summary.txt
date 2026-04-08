@@ -1,0 +1,41 @@
+MODEL EVALUATION SUMMARY
+Overall Accuracy:       0.7021 (70.21%)
+Number of Classes:      2286
+Classes with Samples:   2286
+Total Samples Evaluated:13566
+
+Macro-Averaged Metrics:
+  Precision:  0.7221 (std=0.2402)
+  Recall:     0.6981 (std=0.2474)
+  F1-Score:   0.6922 (std=0.2218)
+
+Percentiles (F1):
+  P10: 0.3636
+  P25: 0.5714
+  P50: 0.7429
+  P75: 0.8889
+  P90: 0.9091
+
+Worst 10 Classes by F1:
+  BANDAGE                   F1=0.0000  P=0.0000  R=0.0000  n=5
+  BATHROOM                  F1=0.0000  P=0.0000  R=0.0000  n=5
+  BETWEEN                   F1=0.0000  P=0.0000  R=0.0000  n=5
+  BOTHER                    F1=0.0000  P=0.0000  R=0.0000  n=5
+  BRUSH                     F1=0.0000  P=0.0000  R=0.0000  n=5
+  BURP                      F1=0.0000  P=0.0000  R=0.0000  n=5
+  DAMN                      F1=0.0000  P=0.0000  R=0.0000  n=5
+  DISSECT                   F1=0.0000  P=0.0000  R=0.0000  n=5
+  DOUBLE                    F1=0.0000  P=0.0000  R=0.0000  n=5
+  EARTH                     F1=0.0000  P=0.0000  R=0.0000  n=5
+
+Best 10 Classes by F1:
+  two more                  F1=1.0000  P=1.0000  R=1.0000  n=5
+  think over                F1=1.0000  P=1.0000  R=1.0000  n=5
+  pissed off                F1=1.0000  P=1.0000  R=1.0000  n=5
+  off the point             F1=1.0000  P=1.0000  R=1.0000  n=5
+  next to                   F1=1.0000  P=1.0000  R=1.0000  n=5
+  mind turned               F1=1.0000  P=1.0000  R=1.0000  n=5
+  let know                  F1=1.0000  P=1.0000  R=1.0000  n=5
+  fill out                  F1=1.0000  P=1.0000  R=1.0000  n=5
+  falling asleep            F1=1.0000  P=1.0000  R=1.0000  n=6
+  dont like                 F1=1.0000  P=1.0000  R=1.0000  n=5

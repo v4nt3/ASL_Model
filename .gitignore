@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# model
+*.h5
+*.hdf5
+*.pth
+*.pt

@@ -1,0 +1,92 @@
+data:
+  data_dir: data/dataset
+  features_dir: data/features
+  labels_file: data/labels.json
+  num_classes: 2286
+  max_seq_length: 64
+  min_seq_length: 8
+  visual_feature_dim: 2048
+  pose_feature_dim: 858
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  num_workers: 10
+  pin_memory: true
+  prefetch_factor: 2
+  normalize_pose: true
+  add_velocity: false
+  add_acceleration: false
+augmentation:
+  enabled: true
+  temporal_crop_prob: 0.3
+  temporal_crop_ratio:
+  - 0.85
+  - 1.0
+  speed_augment_prob: 0.3
+  speed_range:
+  - 0.85
+  - 1.15
+  temporal_mask_prob: 0.15
+  temporal_mask_ratio: 0.05
+  pose_noise_prob: 0.2
+  pose_noise_std: 0.005
+  pose_dropout_prob: 0.1
+  pose_dropout_ratio: 0.03
+  mixup_alpha: 0.2
+  cutmix_alpha: 0.0
+  mix_prob: 0.3
+model:
+  model_type: transformer
+  feature_type: pose
+  hidden_dim: 512
+  num_layers: 4
+  num_heads: 8
+  ff_dim: 2048
+  dropout: 0.2
+  attention_dropout: 0.1
+  path_dropout: 0.1
+  visual_proj_dim: 512
+  pose_proj_dim: 512
+  use_cross_modal_attention: false
+  cross_modal_layers: 2
+  classifier_hidden_dim: 1024
+  use_pooling: attention
+  use_learnable_pos_encoding: true
+  max_position_embeddings: 128
+training:
+  batch_size: 128
+  eval_batch_size: 256
+  num_epochs: 150
+  optimizer: adamw
+  learning_rate: 0.0005
+  min_learning_rate: 1.0e-06
+  weight_decay: 0.05
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  scheduler: cosine_warmup
+  warmup_epochs: 8
+  warmup_ratio: 0.06
+  early_stopping_patience: 15
+  early_stopping_min_delta: 0.001
+  save_top_k: 3
+  checkpoint_dir: outputs/checkpoints
+  save_every_n_epochs: 10
+  use_amp: true
+  amp_dtype: float16
+  use_class_weights: true
+  class_weight_power: 0.5
+  use_balanced_sampling: false
+  label_smoothing: 0.1
+  seed: 42
+  deterministic: false
+inference:
+  window_size: 32
+  window_stride: 16
+  min_confidence: 0.15
+  merge_duplicates: true
+  min_gap_frames: 8
+  top_k: 5
+  camera_fps: 30
+  camera_buffer_seconds: 3.0
+experiment_name: sign_language_pose_only
+output_dir: outputs
