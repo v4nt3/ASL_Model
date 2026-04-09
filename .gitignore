@@ -211,3 +211,6 @@ __marimo__/
 *.hdf5
 *.pth
 *.pt
+
+#dataset
+*.mp4

@@ -7,15 +7,14 @@ data:
   min_seq_length: 8
   visual_feature_dim: 2048
   pose_feature_dim: 858
-  train_split: 0.8
-  val_split: 0.1
-  test_split: 0.1
-  num_workers: 10
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  num_workers: 0
   pin_memory: true
   prefetch_factor: 2
   normalize_pose: true
   add_velocity: false
-  add_acceleration: false
 augmentation:
   enabled: true
   temporal_crop_prob: 0.3
@@ -48,7 +47,7 @@ model:
   visual_proj_dim: 512
   pose_proj_dim: 512
   use_cross_modal_attention: false
-  cross_modal_layers: 2
+  cross_modal_layers: 0
   classifier_hidden_dim: 1024
   use_pooling: attention
   use_learnable_pos_encoding: true
@@ -75,18 +74,7 @@ training:
   amp_dtype: float16
   use_class_weights: true
   class_weight_power: 0.5
-  use_balanced_sampling: false
   label_smoothing: 0.1
   seed: 42
-  deterministic: false
-inference:
-  window_size: 32
-  window_stride: 16
-  min_confidence: 0.15
-  merge_duplicates: true
-  min_gap_frames: 8
-  top_k: 5
-  camera_fps: 30
-  camera_buffer_seconds: 3.0
 experiment_name: sign_language_pose_only
 output_dir: outputs
